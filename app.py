@@ -16,7 +16,8 @@ app.config['SESSION_COOKIE_HTTPONLY']=True
 app.config['SESSION_COOKIE_SAMESITE']='Lax'
 app.config['SESSION_COOKIE_SECURE']=os.getenv('COOKIE_SECURE','0')=='1'
 db=SQLAlchemy(app)
-SUBJECTS=[('Physics',45),('Chemistry',45),('Botany',45),('Zoology',45)]
+
+SUBJECTS=[('Physics',45),('Chemistry',45),('Biology',90)]
 TOTAL=180
 
 class Student(db.Model):
