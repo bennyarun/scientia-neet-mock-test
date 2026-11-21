@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section class="panel centered"><h1>Answer Sheet Submitted</h1><p>Thank you, {{student.name}}.</p><p>Registration: <b>{{student.reg}}</b></p><p>Your responses are saved. Your teacher can view them in the teacher portal.</p><a class="button" href="{{url_for('home')}}">Return Home</a></section>{% endblock %}
