@@ -1,1 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCIENTIA NEET Mock Test</title><link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"></head><body><header><div class="brand"><div class="mark">S<span>✦</span></div><div><strong>SCIENTIA</strong><small>Strong Concepts • Strong Results</small></div></div><nav><a href="{{url_for('home')}}">Home</a><a href="{{url_for('admin_login')}}">Teacher Login</a></nav></header><main>{% with msgs=get_flashed_messages() %}{% for m in msgs %}<p class="alert">{{m}}</p>{% endfor %}{% endwith %}{% block content %}{% endblock %}</main><footer>SCIENTIA • NEET (UG) India Mock Examination • Practice portal</footer></body></html>
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero">
+  <p class="eyebrow">
+    INDIA • NEET (UG) MOCK EXAMINATION
+  </p>
+
+  <h1>
+    Practice with purpose.<br>
+    <em>Perform with confidence.</em>
+  </h1>
+
+  <p>
+    180 questions • 180 minutes •
+    OMR-style online response sheet
+  </p>
+
+  <div class="stats">
+    <div>
+      <b>45</b>
+      <span>Physics</span>
+    </div>
+
+    <div>
+      <b>45</b>
+      <span>Chemistry</span>
+    </div>
+
+    <div>
+      <b>45</b>
+      <span>Botany</span>
+    </div>
+
+    <div>
+      <b>45</b>
+      <span>Zoology</span>
+    </div>
+
+    <div>
+      <b>720</b>
+      <span>Maximum marks*</span>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>Student Registration</h2>
+
+  <p>
+    Enter your full name to receive a unique
+    registration number and begin the test.
+  </p>
+
+  <form action="{{ url_for('register') }}" method="post">
+    <label for="name">Full name</label>
+
+    <input
+      id="name"
+      name="name"
+      required
+      minlength="2"
+      maxlength="160"
+      autocomplete="name"
+      placeholder="Enter full name"
+    >
+
+    <button type="submit">
+      Register &amp; Start Examination
+    </button>
+  </form>
+
+  <p class="muted">
+    *The basic portal records answers;
+    automatic grading and scorecards
+    are not enabled.
+  </p>
+</section>
+
+{% endblock %}
